@@ -11,7 +11,7 @@ class Brand{
     
     public let name: String
     public let yearOfIssue: Int
-    public let models: [Int] = []
+    public var models: [Model] = []
     public init (name: String, year: Int) {
         self.name = name
         self.yearOfIssue = year

@@ -12,12 +12,10 @@ class Model{
     public let yearOfIssue: Int
     public let photoName: String
 
-    let brand: Brand
-    
-    init(name: String, year: Int, brand: Brand, photoName: String){
+ 
+    init(name: String, year: Int, photoName: String){
         self.name = name
         self.yearOfIssue = year
-        self.brand = brand
         self.photoName = photoName
     }
 }

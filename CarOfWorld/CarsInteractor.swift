@@ -14,7 +14,11 @@ class CarsInteractor{
     public init (){
      
         var newBrand = Brand(name: "Toyota", year: 1937)
-        brands.append(Brand(name: "Toyota", year: 1937))
+        newBrand.models.append(Model(name: "Camry", year: 2001, photoName: "Camry_4"))
+        newBrand.models.append(Model(name: "Corolla", year: 2002, photoName: "Corolla_1"))
+        newBrand.models.append(Model(name: "Celica", year: 1999, photoName: "4f8e6bb44892f"))
+        newBrand.models.append(Model(name: "Land Cruiser Prado", year: 1996, photoName: "4f8e6af0b1171"))
+        brands.append(newBrand)
         
         brands.append(Brand(name: "Ferrari", year: 1929))
         brands.append(Brand(name: "Porsche", year: 1931))
