@@ -1,25 +1,20 @@
 //
-//  BrandsTableViewController.swift
+//  ModelsTableViewController.swift
 //  CarOfWorld
 //
-//  Created by Виталий Антипов on 30.10.16.
+//  Created by Виталий Антипов on 31.10.16.
 //  Copyright © 2016 Виталий Антипов. All rights reserved.
 //
 
 import UIKit
 
-class BrandsTableViewController: UITableViewController {
-
-    private var presenter: BrandViewDelegate?
+class ModelsTableViewController: UITableViewController {
     
+    private var presenter: ModelViewDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let interactor = (UIApplication.shared.delegate as? AppDelegate)?.carsInteractor{
-            presenter = BrandPresenter(interactor: interactor)
-        }
-
-                // Uncomment the following line to preserve selection between presentations
+        // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
@@ -30,28 +25,30 @@ class BrandsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-
-        return 1
+       return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-         return presenter!.getCountList()
+        // #warning Incomplete implementation, return the number of rows
+        if presenter != nil{
+            return presenter!.getCountList()
+        }
+        else {
+            return 0
+        }
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "brandCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "modelCell", for: indexPath)
+
         cell.textLabel?.text = presenter?.getNameForIndex(index: indexPath.row)
         if let year = presenter?.getYearOfIssueForIndex(index: indexPath.row){
             cell.detailTextLabel?.text = "\(year)"
         }
         cell.imageView?.image = presenter?.getImageForIndex(index: indexPath.row)
         return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        presenter?.selectItemForIndex(index: indexPath.row)
+
     }
     
 

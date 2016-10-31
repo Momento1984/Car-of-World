@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D83A90A01DC79B9F00D5119A /* CarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83A909F1DC79B9F00D5119A /* CarRouter.swift */; };
+		D83A90A31DC7A06500D5119A /* ModelsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83A90A21DC7A06500D5119A /* ModelsTableViewController.swift */; };
+		D83A90A51DC7A27B00D5119A /* ModelPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83A90A41DC7A27B00D5119A /* ModelPresenter.swift */; };
 		D8636A8D1DC5BD9B004D04BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8636A8C1DC5BD9B004D04BD /* AppDelegate.swift */; };
 		D8636A8F1DC5BD9B004D04BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8636A8E1DC5BD9B004D04BD /* ViewController.swift */; };
 		D8636A921DC5BD9B004D04BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8636A901DC5BD9B004D04BD /* Main.storyboard */; };
@@ -20,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D83A909F1DC79B9F00D5119A /* CarRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarRouter.swift; sourceTree = "<group>"; };
+		D83A90A21DC7A06500D5119A /* ModelsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelsTableViewController.swift; sourceTree = "<group>"; };
+		D83A90A41DC7A27B00D5119A /* ModelPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelPresenter.swift; sourceTree = "<group>"; };
 		D8636A891DC5BD9B004D04BD /* CarOfWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarOfWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8636A8C1DC5BD9B004D04BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8636A8E1DC5BD9B004D04BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +51,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D83A90A11DC79BA600D5119A /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				D83A909F1DC79B9F00D5119A /* CarRouter.swift */,
+			);
+			name = Router;
+			sourceTree = "<group>";
+		};
 		D8636A801DC5BD9A004D04BD = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +82,7 @@
 				D8636AAB1DC5D180004D04BD /* Interactors */,
 				D8F99AB81DC64B8B00C4F2E4 /* Presenters */,
 				D8636AA21DC5C16D004D04BD /* Entities */,
+				D83A90A11DC79BA600D5119A /* Router */,
 				D8636A901DC5BD9B004D04BD /* Main.storyboard */,
 				D8636A9E1DC5BE07004D04BD /* Supporting Files */,
 			);
@@ -90,6 +105,7 @@
 			children = (
 				D8F99AB41DC6482000C4F2E4 /* BrandsTableViewController.swift */,
 				D8636A8E1DC5BD9B004D04BD /* ViewController.swift */,
+				D83A90A21DC7A06500D5119A /* ModelsTableViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -115,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				D8F99AB61DC64B8200C4F2E4 /* BrandPresenter.swift */,
+				D83A90A41DC7A27B00D5119A /* ModelPresenter.swift */,
 			);
 			name = Presenters;
 			sourceTree = "<group>";
@@ -193,9 +210,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8F99AB71DC64B8200C4F2E4 /* BrandPresenter.swift in Sources */,
+				D83A90A01DC79B9F00D5119A /* CarRouter.swift in Sources */,
+				D83A90A31DC7A06500D5119A /* ModelsTableViewController.swift in Sources */,
 				D8636A8F1DC5BD9B004D04BD /* ViewController.swift in Sources */,
 				D8F99AB51DC6482000C4F2E4 /* BrandsTableViewController.swift in Sources */,
 				D8636AA61DC5C27E004D04BD /* Brand.swift in Sources */,
+				D83A90A51DC7A27B00D5119A /* ModelPresenter.swift in Sources */,
 				D8636A8D1DC5BD9B004D04BD /* AppDelegate.swift in Sources */,
 				D8636AAA1DC5D163004D04BD /* CarsInteractor.swift in Sources */,
 				D8636AA81DC5CB1F004D04BD /* Model.swift in Sources */,
@@ -321,7 +341,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 56T29FYXL9;
 				INFOPLIST_FILE = CarOfWorld/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -335,7 +354,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 56T29FYXL9;
 				INFOPLIST_FILE = CarOfWorld/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

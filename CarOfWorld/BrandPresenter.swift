@@ -8,24 +8,30 @@
 
 import Foundation
 import UIKit
-protocol BrandViewDelegate{
-    func getImageLogo(index: Int) -> UIImage?
-    func getName(index: Int) -> String?
-    func getYearOfIssue(index: Int) -> Int?
+protocol CommonViewDelegate{
+    func getImageForIndex(index: Int) -> UIImage?
+    func getNameForIndex(index: Int) -> String?
+    func getYearOfIssueForIndex(index: Int) -> Int?
     func getCountList() -> Int
+    
+}
 
-
+protocol BrandViewDelegate: CommonViewDelegate{
+   func selectItemForIndex(index: Int)
 }
 class BrandPresenter:BrandViewDelegate{
     
     
-    let interactor: CarsInteractor
+    private let interactor: CarsInteractor
+    private let router: RouterDelegate = CarRouter.sharedRouter()
+    private var selectedBrand: Brand?
     
     public init(interactor: CarsInteractor){
         self.interactor = interactor
+        router =
     }
 
-    func getYearOfIssue(index: Int) -> Int? {
+    public func getYearOfIssueForIndex(index: Int) -> Int? {
         if index < self.interactor.brands.count{
             return self.interactor.brands[index].yearOfIssue
         }
@@ -35,7 +41,7 @@ class BrandPresenter:BrandViewDelegate{
 
     }
 
-    func getImageLogo(index: Int) -> UIImage? {
+    public func getImageForIndex(index: Int) -> UIImage? {
         if index < self.interactor.brands.count{
             let nameImage = self.interactor.brands[index].name + "-logo"
             return UIImage(named: nameImage)
@@ -45,7 +51,7 @@ class BrandPresenter:BrandViewDelegate{
         }
     }
 
-    func getName(index: Int) -> String?{
+    public func getNameForIndex(index: Int) -> String?{
         if index < self.interactor.brands.count{
             return self.interactor.brands[index].name
         }
@@ -54,7 +60,17 @@ class BrandPresenter:BrandViewDelegate{
         }
     }
     
-    func getCountList() -> Int{
+    public func getCountList() -> Int{
         return self.interactor.brands.count
+    }
+    
+    public func selectItemForIndex(index: Int){
+        if index < self.interactor.brands.count{
+            selectedBrand = self.interactor.brands[index]
+        }
+        else {
+            selectedBrand = nil
+        }
+
     }
 }

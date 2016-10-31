@@ -20,7 +20,14 @@ class CarsInteractor{
         newBrand.models.append(Model(name: "Land Cruiser Prado", year: 1996, photoName: "4f8e6af0b1171"))
         brands.append(newBrand)
         
-        brands.append(Brand(name: "Ferrari", year: 1929))
+        newBrand = Brand(name: "Ferrari", year: 1929)
+        newBrand.models.append(Model(name: "f430 spider", year: 2004, photoName: "ferrari-f430-spider"))
+        newBrand.models.append(Model(name: "f355 spider", year: 1990, photoName: "ferrari-f430-spider"))
+        newBrand.models.append(Model(name: "f599xx", year: 1984, photoName: "ferrari-599xx"))
+        newBrand.models.append(Model(name: "550 moranello", year: 1991, photoName: "ferrari-550-maranello"))
+        brands.append(newBrand)
+
+        
         brands.append(Brand(name: "Porsche", year: 1931))
         brands.append(Brand(name: "Audi", year: 1909))
         brands.append(Brand(name: "Lamborghini", year: 1963))
