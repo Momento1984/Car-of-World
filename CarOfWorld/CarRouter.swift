@@ -7,22 +7,25 @@
 //
 
 import Foundation
+import UIKit
 protocol RouterDelegate{
     func openModelsModuleForBrand(brand: Brand)
 }
 class CarRouter: RouterDelegate{
-    static var shared:CarRouter?{
-        willSet(newValue){
-            if shared == nil{
-                self.shared = newValue
+    static let shared = CarRouter()
+    
+    private var currentPresenter: CommonViewDelegate?
+    private var nextPresenter: CommonViewDelegate?
+    
+    public func openModelsModuleForBrand(brand: Brand) {
+        nextPresenter = ModelPresenter(brand: brand)
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
+            if let navCon = appDelegate.window?.rootViewController as! UINavigationController?{
+                let mtvc = ModelsTableViewController()
+                mtvc.presenter = nextPresenter as! ModelViewDelegate?
+                navCon.pushViewController(mtvc, animated: true)
             }
         }
-    }
-    init() {
-        CarRouter.shared = self
-    }
-    public func openModelsModuleForBrand(brand: Brand) {
-        
     }
 
     

@@ -17,8 +17,9 @@ class ModelPresenter:ModelViewDelegate{
     private var brand: Brand?
     
     
-    public init(interactor: CarsInteractor){
-        self.interactor = interactor
+    public init(brand: Brand){
+        self.brand = brand
+        self.interactor = ((UIApplication.shared.delegate as? AppDelegate)?.carsInteractor)!
     }
     
     public func getYearOfIssueForIndex(index: Int) -> Int? {
@@ -73,6 +74,14 @@ class ModelPresenter:ModelViewDelegate{
             return 0;
         }
     }
+    
+    
+    func nextViewDetailForIndex(index: Int){
+        /*if index < self.interactor.brands.count{
+            router.openModelsModuleForBrand(brand: self.interactor.brands[index])
+        }*/
+    }
+
     
     
 

@@ -13,6 +13,7 @@ protocol CommonViewDelegate{
     func getNameForIndex(index: Int) -> String?
     func getYearOfIssueForIndex(index: Int) -> Int?
     func getCountList() -> Int
+    func nextViewDetailForIndex(index: Int)
     
 }
 
@@ -23,12 +24,11 @@ class BrandPresenter:BrandViewDelegate{
     
     
     private let interactor: CarsInteractor
-    private let router: RouterDelegate = CarRouter.sharedRouter()
+    private let router: RouterDelegate = CarRouter.shared
     private var selectedBrand: Brand?
     
     public init(interactor: CarsInteractor){
         self.interactor = interactor
-        router =
     }
 
     public func getYearOfIssueForIndex(index: Int) -> Int? {
@@ -72,5 +72,10 @@ class BrandPresenter:BrandViewDelegate{
             selectedBrand = nil
         }
 
+    }
+    func nextViewDetailForIndex(index: Int){
+        if index < self.interactor.brands.count{
+            router.openModelsModuleForBrand(brand: self.interactor.brands[index])
+        }
     }
 }

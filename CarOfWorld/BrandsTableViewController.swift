@@ -35,7 +35,7 @@ class BrandsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-         return presenter!.getCountList()
+        return presenter!.getCountList()
     }
 
     
@@ -49,10 +49,13 @@ class BrandsTableViewController: UITableViewController {
         return cell
     }
     
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         presenter?.selectItemForIndex(index: indexPath.row)
+        presenter?.nextViewDetailForIndex(index: indexPath.row)
     }
+    
     
 
     /*

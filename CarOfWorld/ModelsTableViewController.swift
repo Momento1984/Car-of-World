@@ -10,7 +10,8 @@ import UIKit
 
 class ModelsTableViewController: UITableViewController {
     
-    private var presenter: ModelViewDelegate?
+    public var presenter: ModelViewDelegate?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,7 @@ class ModelsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+       
         if presenter != nil{
             return presenter!.getCountList()
         }
@@ -40,7 +41,7 @@ class ModelsTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "modelCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "a", for: indexPath)
 
         cell.textLabel?.text = presenter?.getNameForIndex(index: indexPath.row)
         if let year = presenter?.getYearOfIssueForIndex(index: indexPath.row){
@@ -48,6 +49,7 @@ class ModelsTableViewController: UITableViewController {
         }
         cell.imageView?.image = presenter?.getImageForIndex(index: indexPath.row)
         return cell
+        
 
     }
     
