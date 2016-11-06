@@ -9,18 +9,20 @@
 import Foundation
 import UIKit
 protocol CommonViewDelegate: class{
+    
     func getView()->UIViewController?
     func getImageForIndex(index: Int) -> UIImage?
     func getNameForIndex(index: Int) -> String?
     func getYearOfIssueForIndex(index: Int) -> Int?
     func getCountList() -> Int
     func nextViewDetailForIndex(index: Int)
+    func selectItemForIndex(index: Int)
+
     
 }
 
 protocol BrandViewDelegate: CommonViewDelegate{
-   func selectItemForIndex(index: Int)
-}
+   }
 class BrandPresenter:BrandViewDelegate{
     
     

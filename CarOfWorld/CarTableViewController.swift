@@ -10,9 +10,15 @@ import UIKit
 
 class CarTableViewController: UITableViewController {
 
+    public var presenter: CarViewDelegate?
+    
+    @IBOutlet weak var imageModel: UIImageView!
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
 
+        super.viewDidLoad()
+        imageModel.image = presenter?.getImage()
+        title = presenter?.getName()
     }
 
         // MARK: - Table view data source

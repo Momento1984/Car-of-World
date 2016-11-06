@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 protocol RouterDelegate: class{
     func openModelsModuleForBrand(brand: Brand)
+    func openCarModuleForModel(model: Model)
     func prepare(for segue: UIStoryboardSegue, sender: Any?)
 }
 class CarRouter: RouterDelegate{
@@ -28,17 +29,17 @@ class CarRouter: RouterDelegate{
     public func openModelsModuleForBrand(brand: Brand) {
         
         if let view = currentPresenter?.getView(){
-            //nextPresenter = ModelPresenter(brand: brand)
-            view.performSegue(withIdentifier: "Open models", sender: nextPresenter)
+            view.performSegue(withIdentifier: "Open models", sender: currentPresenter)
         }
-        /*if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
-            if let navCon = appDelegate.window?.rootViewController as! UINavigationController?{
-                let mtvc = ModelsTableViewController()
-                mtvc.presenter = nextPresenter as! ModelViewDelegate?
-                navCon.pushViewController(mtvc, animated: true)
-            }
-        }*/
     }
+    
+    public func openCarModuleForModel(model: Model) {
+        
+        if let view = currentPresenter?.getView(){
+            view.performSegue(withIdentifier: "Open car", sender: currentPresenter)
+        }
+    }
+    
     public func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if let ident = segue.identifier{
             switch ident {
@@ -46,7 +47,15 @@ class CarRouter: RouterDelegate{
                 let mtvc = segue.destination as! ModelsTableViewController
                 if let brand = (currentPresenter as! BrandPresenter).selectedBrand{
                     mtvc.presenter = ModelPresenter(brand:brand)
-                    
+                    currentPresenter = mtvc.presenter
+            
+                }
+            case "Open car":
+                let ctvc = segue.destination as! CarTableViewController
+                if let model = (currentPresenter as! ModelPresenter).selectedModel{
+                    ctvc.presenter = CarPresenter(model:model)
+                    //currentPresenter = ctvc.presenter
+
                 }
                 
             default: print("Error segue ident name = \(ident)")

@@ -16,6 +16,9 @@ class ModelsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = presenter?.getName()
+        
+        (presenter as! ModelPresenter).view = self
+
         //self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "modelCell")
 
         // Uncomment the following line to preserve selection between presentations
@@ -56,6 +59,13 @@ class ModelsTableViewController: UITableViewController {
 
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        presenter?.selectItemForIndex(index: indexPath.row)
+        presenter?.nextViewDetailForIndex(index: indexPath.row)
+    }
+
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -92,14 +102,13 @@ class ModelsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        CarRouter.shared.prepare(for: segue, sender: sender)
     }
-    */
+    
 
 }

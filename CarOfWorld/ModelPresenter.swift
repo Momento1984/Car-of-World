@@ -17,11 +17,15 @@ class ModelPresenter:ModelViewDelegate{
     
 
     private let interactor: CarsInteractor
+    private weak var router: RouterDelegate?
     private var brand: Brand?
+    public var selectedModel: Model?
+
     public var view: UIViewController?
     
     
     public init(brand: Brand){
+        self.router = CarRouter.shared
         self.brand = brand
         self.interactor = ((UIApplication.shared.delegate as? AppDelegate)?.carsInteractor)!
     }
@@ -61,7 +65,7 @@ class ModelPresenter:ModelViewDelegate{
         }
     }
     
-    func getNameForIndex(index: Int) -> String?{
+    public func getNameForIndex(index: Int) -> String?{
         if let models = brand?.models{
             if index < models.count{
 
@@ -85,11 +89,25 @@ class ModelPresenter:ModelViewDelegate{
         }
     }
     
+    public func selectItemForIndex(index: Int){
+        if let models = brand?.models{
+            if index < models.count{
+                selectedModel = models[index]
+            }
+        }
+        else {
+            selectedModel = nil
+        }
+        
+    }
     
-    func nextViewDetailForIndex(index: Int){
-        /*if index < self.interactor.brands.count{
-            router.openModelsModuleForBrand(brand: self.interactor.brands[index])
-        }*/
+    
+    public func nextViewDetailForIndex(index: Int){
+        if let models = brand?.models{
+            if index < models.count{
+                router?.openCarModuleForModel(model: models[index])
+            }
+        }
     }
 
     
