@@ -15,6 +15,7 @@ class BrandsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Brand viewDidLoad")
         //presenter = BrandPresenter()
         presenter = CarRouter.shared.currentPresenter as? BrandViewDelegate
         (presenter as! BrandPresenter).view = self

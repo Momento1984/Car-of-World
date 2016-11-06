@@ -7,14 +7,28 @@
 //
 
 import Foundation
-
+protocol CarsInteractorDelegate{
+    func getBrandForModel(model: Model)-> Brand?
+}
 class CarsInteractor{
     public var brands = [Brand]()
     public static let shared = CarsInteractor()
 
     private init (){
+        print("Car interactor created")
         var newBrand = Brand(name: "Toyota", year: 1937)
-        newBrand.models.append(Model(name: "Camry", year: 2001, photoName: "Camry_4"))
+        var newModel = Model(name: "Camry", year: 2001, photoName: "Camry_4")
+        newModel.brand = newBrand
+        newModel.enginePower = 122
+        newModel.colors = ["red", "green", "black"]
+        newModel.drive = .Forward
+        newModel.engineTyp = .Gasoline
+        newModel.transmission = [.Mechanic, .Automat, .Variator]
+        newModel.description = "Авто представительского класса"
+        newBrand.models.append(newModel)
+        
+        
+        newModel = Model(name: "Corolla", year: 2002, photoName: "Corolla_1")
         newBrand.models.append(Model(name: "Corolla", year: 2002, photoName: "Corolla_1"))
         newBrand.models.append(Model(name: "Celica", year: 1999, photoName: "4f8e6bb44892f"))
         newBrand.models.append(Model(name: "Land Cruiser Prado", year: 1996, photoName: "4f8e6af0b1171"))
@@ -35,4 +49,12 @@ class CarsInteractor{
         brands.append(Brand(name: "Nissan", year: 1933))
         brands.append(Brand(name: "Mercedes-Benz", year: 1926))
     }
+    
+    
+    func getBrandForModel(model: Model)->Brand?{
+        return model.brand
+        
+
+    }
+
 }

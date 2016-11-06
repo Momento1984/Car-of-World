@@ -25,6 +25,8 @@ class ModelPresenter:ModelViewDelegate{
     
     
     public init(brand: Brand){
+        print("Model presenter created")
+
         self.router = CarRouter.shared
         self.brand = brand
         self.interactor = ((UIApplication.shared.delegate as? AppDelegate)?.carsInteractor)!

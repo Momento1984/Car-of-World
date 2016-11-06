@@ -32,6 +32,7 @@ class BrandPresenter:BrandViewDelegate{
     public var view: UIViewController?
     
     public init(){
+        print("Brand presenter created")
         self.interactor = CarsInteractor.shared
         self.router = CarRouter.shared
     }

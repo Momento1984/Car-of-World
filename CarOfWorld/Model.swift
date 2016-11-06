@@ -27,6 +27,7 @@ enum Transmission{
 }
 
 class Model{
+    public weak var brand: Brand?
     public var name: String
     public var yearOfIssue: Int
     public var photoName: String

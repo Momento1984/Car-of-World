@@ -11,7 +11,6 @@
 		D83A90A31DC7A06500D5119A /* ModelsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83A90A21DC7A06500D5119A /* ModelsTableViewController.swift */; };
 		D83A90A51DC7A27B00D5119A /* ModelPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83A90A41DC7A27B00D5119A /* ModelPresenter.swift */; };
 		D8636A8D1DC5BD9B004D04BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8636A8C1DC5BD9B004D04BD /* AppDelegate.swift */; };
-		D8636A8F1DC5BD9B004D04BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8636A8E1DC5BD9B004D04BD /* ViewController.swift */; };
 		D8636A921DC5BD9B004D04BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8636A901DC5BD9B004D04BD /* Main.storyboard */; };
 		D8636A971DC5BD9B004D04BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8636A951DC5BD9B004D04BD /* LaunchScreen.storyboard */; };
 		D8636AA61DC5C27E004D04BD /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8636AA51DC5C27E004D04BD /* Brand.swift */; };
@@ -30,7 +29,6 @@
 		D83A90A41DC7A27B00D5119A /* ModelPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelPresenter.swift; sourceTree = "<group>"; };
 		D8636A891DC5BD9B004D04BD /* CarOfWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarOfWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8636A8C1DC5BD9B004D04BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D8636A8E1DC5BD9B004D04BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D8636A911DC5BD9B004D04BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D8636A961DC5BD9B004D04BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8636A981DC5BD9B004D04BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -109,7 +107,6 @@
 			children = (
 				D8AE2FED1DCF19C80098C792 /* CarTableViewController.swift */,
 				D8F99AB41DC6482000C4F2E4 /* BrandsTableViewController.swift */,
-				D8636A8E1DC5BD9B004D04BD /* ViewController.swift */,
 				D83A90A21DC7A06500D5119A /* ModelsTableViewController.swift */,
 			);
 			name = Views;
@@ -219,7 +216,6 @@
 				D8AE2FEE1DCF19C80098C792 /* CarTableViewController.swift in Sources */,
 				D83A90A01DC79B9F00D5119A /* CarRouter.swift in Sources */,
 				D83A90A31DC7A06500D5119A /* ModelsTableViewController.swift in Sources */,
-				D8636A8F1DC5BD9B004D04BD /* ViewController.swift in Sources */,
 				D8F99AB51DC6482000C4F2E4 /* BrandsTableViewController.swift in Sources */,
 				D8636AA61DC5C27E004D04BD /* Brand.swift in Sources */,
 				D8AE2FF01DCF1A7B0098C792 /* CarPresenter.swift in Sources */,

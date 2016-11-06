@@ -22,6 +22,8 @@ class CarRouter: RouterDelegate{
     private var nextPresenter: CommonViewDelegate?
     
     private init(){
+        print("Router created")
+
         //currentPresenter = BrandPresenter()
         
     }

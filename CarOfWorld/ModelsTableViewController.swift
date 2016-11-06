@@ -15,6 +15,7 @@ class ModelsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Model viewDidLoad")
         title = presenter?.getName()
         
         (presenter as! ModelPresenter).view = self

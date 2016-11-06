@@ -13,27 +13,73 @@ class CarTableViewController: UITableViewController {
     public var presenter: CarViewDelegate?
     
     @IBOutlet weak var imageModel: UIImageView!
+    @IBOutlet weak var brandName: UILabel!
+    @IBOutlet weak var yearOfIssue: UILabel!
+    @IBOutlet weak var engineTyp: UILabel!
+    
+    @IBOutlet weak var enginePower: UILabel!
+    
+    @IBOutlet weak var drive: UILabel!
+    
+    @IBOutlet var colorViews: [UIView]!
+
+    @IBOutlet weak var transmission: UILabel!
+    
+    @IBOutlet weak var modelDescription: UITextView!
     
     override func viewDidLoad() {
+        
+        print("Car viewDidLoad")
 
         super.viewDidLoad()
         imageModel.image = presenter?.getImage()
+        brandName.text = presenter?.getBrandName()
+        yearOfIssue.text = "\((presenter?.getYearOfIssue())!)"
+        engineTyp.text = presenter?.getEngineTyp()
+        transmission.text = presenter?.getTransmission()
+        drive.text = presenter?.getDrive()
+        enginePower.text = "\((presenter?.getEnginePower())!) л. с."
+        modelDescription.text = presenter?.getDescription()
+        
         title = presenter?.getName()
+        
+        
+        
+        for (index, colorView) in colorViews.enumerated(){
+            colorView.backgroundColor = presenter?.getColorForIndex(index: index)
+            
+        }
+        
+        tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
     }
+    
+    
 
         // MARK: - Table view data source
 
+    /*override func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
     
-
-    /*
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 1 {
+            return 3
+        }
+        else {
+            return 2
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Colors cell", for: indexPath)
 
         // Configure the cell...
 
         return cell
-    }
-    */
+    }*/
+    
 
     /*
     // Override to support conditional editing of the table view.
