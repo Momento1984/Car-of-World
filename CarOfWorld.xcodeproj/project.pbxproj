@@ -17,6 +17,8 @@
 		D8636AA61DC5C27E004D04BD /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8636AA51DC5C27E004D04BD /* Brand.swift */; };
 		D8636AA81DC5CB1F004D04BD /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8636AA71DC5CB1F004D04BD /* Model.swift */; };
 		D8636AAA1DC5D163004D04BD /* CarsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8636AA91DC5D162004D04BD /* CarsInteractor.swift */; };
+		D8AE2FEE1DCF19C80098C792 /* CarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AE2FED1DCF19C80098C792 /* CarTableViewController.swift */; };
+		D8AE2FF01DCF1A7B0098C792 /* CarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AE2FEF1DCF1A7B0098C792 /* CarPresenter.swift */; };
 		D8F99AB51DC6482000C4F2E4 /* BrandsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F99AB41DC6482000C4F2E4 /* BrandsTableViewController.swift */; };
 		D8F99AB71DC64B8200C4F2E4 /* BrandPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F99AB61DC64B8200C4F2E4 /* BrandPresenter.swift */; };
 		D8F99ABC1DC6676800C4F2E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8F99ABB1DC6676800C4F2E4 /* Assets.xcassets */; };
@@ -35,6 +37,8 @@
 		D8636AA51DC5C27E004D04BD /* Brand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brand.swift; sourceTree = "<group>"; };
 		D8636AA71DC5CB1F004D04BD /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		D8636AA91DC5D162004D04BD /* CarsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarsInteractor.swift; sourceTree = "<group>"; };
+		D8AE2FED1DCF19C80098C792 /* CarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarTableViewController.swift; sourceTree = "<group>"; };
+		D8AE2FEF1DCF1A7B0098C792 /* CarPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarPresenter.swift; sourceTree = "<group>"; };
 		D8F99AB41DC6482000C4F2E4 /* BrandsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrandsTableViewController.swift; sourceTree = "<group>"; };
 		D8F99AB61DC64B8200C4F2E4 /* BrandPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrandPresenter.swift; sourceTree = "<group>"; };
 		D8F99ABB1DC6676800C4F2E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 		D8636A9F1DC5BE23004D04BD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D8AE2FED1DCF19C80098C792 /* CarTableViewController.swift */,
 				D8F99AB41DC6482000C4F2E4 /* BrandsTableViewController.swift */,
 				D8636A8E1DC5BD9B004D04BD /* ViewController.swift */,
 				D83A90A21DC7A06500D5119A /* ModelsTableViewController.swift */,
@@ -132,6 +137,7 @@
 			children = (
 				D8F99AB61DC64B8200C4F2E4 /* BrandPresenter.swift */,
 				D83A90A41DC7A27B00D5119A /* ModelPresenter.swift */,
+				D8AE2FEF1DCF1A7B0098C792 /* CarPresenter.swift */,
 			);
 			name = Presenters;
 			sourceTree = "<group>";
@@ -210,11 +216,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8F99AB71DC64B8200C4F2E4 /* BrandPresenter.swift in Sources */,
+				D8AE2FEE1DCF19C80098C792 /* CarTableViewController.swift in Sources */,
 				D83A90A01DC79B9F00D5119A /* CarRouter.swift in Sources */,
 				D83A90A31DC7A06500D5119A /* ModelsTableViewController.swift in Sources */,
 				D8636A8F1DC5BD9B004D04BD /* ViewController.swift in Sources */,
 				D8F99AB51DC6482000C4F2E4 /* BrandsTableViewController.swift in Sources */,
 				D8636AA61DC5C27E004D04BD /* Brand.swift in Sources */,
+				D8AE2FF01DCF1A7B0098C792 /* CarPresenter.swift in Sources */,
 				D83A90A51DC7A27B00D5119A /* ModelPresenter.swift in Sources */,
 				D8636A8D1DC5BD9B004D04BD /* AppDelegate.swift in Sources */,
 				D8636AAA1DC5D163004D04BD /* CarsInteractor.swift in Sources */,

@@ -46,6 +46,7 @@ class CarRouter: RouterDelegate{
                 let mtvc = segue.destination as! ModelsTableViewController
                 if let brand = (currentPresenter as! BrandPresenter).selectedBrand{
                     mtvc.presenter = ModelPresenter(brand:brand)
+                    
                 }
                 
             default: print("Error segue ident name = \(ident)")

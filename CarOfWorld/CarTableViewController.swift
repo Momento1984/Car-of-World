@@ -1,61 +1,33 @@
 //
-//  ModelsTableViewController.swift
+//  CarTableViewController.swift
 //  CarOfWorld
 //
-//  Created by Виталий Антипов on 31.10.16.
+//  Created by Виталий Антипов on 06.11.16.
 //  Copyright © 2016 Виталий Антипов. All rights reserved.
 //
 
 import UIKit
 
-class ModelsTableViewController: UITableViewController {
-    
-    public var presenter: ModelViewDelegate?
-    
-    
+class CarTableViewController: UITableViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = presenter?.getName()
-        //self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "modelCell")
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
-   
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-       return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       
-        if presenter != nil{
-            return presenter!.getCountList()
-        }
-        else {
-            return 0
-        }
-    }
+        // MARK: - Table view data source
 
     
+
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "modelCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        cell.textLabel?.text = presenter?.getNameForIndex(index: indexPath.row)
-        if let year = presenter?.getYearOfIssueForIndex(index: indexPath.row){
-            cell.detailTextLabel?.text = "\(year)"
-        }
-        cell.imageView?.image = presenter?.getImageForIndex(index: indexPath.row)
+        // Configure the cell...
+
         return cell
-        
-
     }
-    
+    */
 
     /*
     // Override to support conditional editing of the table view.

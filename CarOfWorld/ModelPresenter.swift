@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 protocol ModelViewDelegate: CommonViewDelegate{
+    func getName()->String?
     
 }
 class ModelPresenter:ModelViewDelegate{
@@ -24,7 +25,10 @@ class ModelPresenter:ModelViewDelegate{
         self.brand = brand
         self.interactor = ((UIApplication.shared.delegate as? AppDelegate)?.carsInteractor)!
     }
-    
+    public func getName()->String?{
+        return brand?.name
+    }
+
     public func getView() -> UIViewController? {
         return view
     }
