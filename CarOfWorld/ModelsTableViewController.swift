@@ -15,6 +15,9 @@ class ModelsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "modelCell")
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -41,7 +44,7 @@ class ModelsTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "a", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "modelCell", for: indexPath)
 
         cell.textLabel?.text = presenter?.getNameForIndex(index: indexPath.row)
         if let year = presenter?.getYearOfIssueForIndex(index: indexPath.row){

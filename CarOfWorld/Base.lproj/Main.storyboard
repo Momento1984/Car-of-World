@@ -49,6 +49,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Марки автомобилей" id="ATM-Ja-b0M"/>
+                    <connections>
+                        <segue destination="9fX-Pf-whf" kind="show" identifier="Open models" id="Ipw-WO-1Gn"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3oR-t0-kxK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -63,7 +66,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="a" textLabel="l4K-D8-F8U" detailTextLabel="gDT-CR-hPo" style="IBUITableViewCellStyleSubtitle" id="lHT-4p-kSX">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="modelCell" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="modelCell" textLabel="l4K-D8-F8U" detailTextLabel="5nI-Jw-ama" style="IBUITableViewCellStyleSubtitle" id="lHT-4p-kSX">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lHT-4p-kSX" id="Z2w-sR-FYF">
@@ -77,7 +80,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gDT-CR-hPo">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5nI-Jw-ama">
                                             <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>

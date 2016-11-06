@@ -13,8 +13,11 @@ protocol ModelViewDelegate: CommonViewDelegate{
     
 }
 class ModelPresenter:ModelViewDelegate{
+    
+
     private let interactor: CarsInteractor
     private var brand: Brand?
+    public var view: UIViewController?
     
     
     public init(brand: Brand){
@@ -22,6 +25,9 @@ class ModelPresenter:ModelViewDelegate{
         self.interactor = ((UIApplication.shared.delegate as? AppDelegate)?.carsInteractor)!
     }
     
+    public func getView() -> UIViewController? {
+        return view
+    }
     public func getYearOfIssueForIndex(index: Int) -> Int? {
         if let models = brand?.models{
             if index < models.count{

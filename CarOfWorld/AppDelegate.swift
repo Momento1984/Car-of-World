@@ -12,11 +12,12 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     public var window: UIWindow?
-    public let carsInteractor = CarsInteractor()
-    public let carRouter = CarRouter()
+    public let carsInteractor = CarsInteractor.shared
+    public let carRouter = CarRouter.shared
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        carRouter.currentPresenter = BrandPresenter()
         // Override point for customization after application launch.
         return true
     }

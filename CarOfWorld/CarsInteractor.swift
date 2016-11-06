@@ -10,9 +10,9 @@ import Foundation
 
 class CarsInteractor{
     public var brands = [Brand]()
-    
-    public init (){
-     
+    public static let shared = CarsInteractor()
+
+    private init (){
         var newBrand = Brand(name: "Toyota", year: 1937)
         newBrand.models.append(Model(name: "Camry", year: 2001, photoName: "Camry_4"))
         newBrand.models.append(Model(name: "Corolla", year: 2002, photoName: "Corolla_1"))
@@ -34,6 +34,5 @@ class CarsInteractor{
         brands.append(Brand(name: "Volkswagen", year: 1937))
         brands.append(Brand(name: "Nissan", year: 1933))
         brands.append(Brand(name: "Mercedes-Benz", year: 1926))
-
     }
 }

@@ -8,7 +8,8 @@
 
 import Foundation
 import UIKit
-protocol CommonViewDelegate{
+protocol CommonViewDelegate: class{
+    func getView()->UIViewController?
     func getImageForIndex(index: Int) -> UIImage?
     func getNameForIndex(index: Int) -> String?
     func getYearOfIssueForIndex(index: Int) -> Int?
@@ -24,13 +25,18 @@ class BrandPresenter:BrandViewDelegate{
     
     
     private let interactor: CarsInteractor
-    private let router: RouterDelegate = CarRouter.shared
-    private var selectedBrand: Brand?
+    private weak var router: RouterDelegate?
+    public var selectedBrand: Brand?
+    public var view: UIViewController?
     
-    public init(interactor: CarsInteractor){
-        self.interactor = interactor
+    public init(){
+        self.interactor = CarsInteractor.shared
+        self.router = CarRouter.shared
     }
 
+    public func getView()->UIViewController?{
+        return view
+    }
     public func getYearOfIssueForIndex(index: Int) -> Int? {
         if index < self.interactor.brands.count{
             return self.interactor.brands[index].yearOfIssue
@@ -75,7 +81,7 @@ class BrandPresenter:BrandViewDelegate{
     }
     func nextViewDetailForIndex(index: Int){
         if index < self.interactor.brands.count{
-            router.openModelsModuleForBrand(brand: self.interactor.brands[index])
+            router?.openModelsModuleForBrand(brand: self.interactor.brands[index])
         }
     }
 }

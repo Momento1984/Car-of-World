@@ -15,10 +15,10 @@ class BrandsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let interactor = (UIApplication.shared.delegate as? AppDelegate)?.carsInteractor{
-            presenter = BrandPresenter(interactor: interactor)
-        }
-
+        //presenter = BrandPresenter()
+        presenter = CarRouter.shared.currentPresenter as? BrandViewDelegate
+        (presenter as! BrandPresenter).view = self
+        
                 // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -93,14 +93,15 @@ class BrandsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        CarRouter.shared.prepare(for: segue, sender: sender)
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }
