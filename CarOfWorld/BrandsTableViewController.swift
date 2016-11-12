@@ -32,6 +32,7 @@ class BrandsTableViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         CarRouter.shared.viewDidAppearWithPresenter(presenter: presenter!)
+        tableView.reloadData()
         
     }
     

@@ -11,7 +11,12 @@ import UIKit
 
 
 class NewBrandViewController: UIViewController, UITextFieldDelegate {
-
+    
+    public var presenter: NewBrandViewDelegate?
+    
+    private var yearOfIssue = 0
+    private var name = ""
+    
     @IBOutlet weak var nameTextField: UITextField!{
         didSet{
             nameTextField.delegate = self
@@ -34,7 +39,7 @@ class NewBrandViewController: UIViewController, UITextFieldDelegate {
 
     
     @IBAction private func addButton(_ sender: Any) {
-        
+        presenter?.addBrandWithName(name: name, andYear: yearOfIssue)
     }
     
     // MARK: UITextFieldDelegate
@@ -45,18 +50,24 @@ class NewBrandViewController: UIViewController, UITextFieldDelegate {
         if textField == yearOfIssueTextField {
             if let year = Int(textField.text!){
                 textField.resignFirstResponder()
+                yearOfIssue = year
                 return true
             } else{
                 return false
             }
 
         }
-        //searchText = textField.text
-        textField.resignFirstResponder()
+        else if textField == nameTextField{
+            name = textField.text!
+            textField.resignFirstResponder()
+        }
+        
         return true
     }
 
-    
+    deinit{
+        print("NewBrand view good bay!")
+    }
     
     
     /*

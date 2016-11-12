@@ -18,7 +18,6 @@ protocol TablePresenterDelegate: CommonPresenterDelegate{
     func getCountList() -> Int
     func nextViewDetailForIndex(index: Int)
     func selectItemForIndex(index: Int)
-    func addNewItem()
     
 }
 
@@ -45,3 +44,9 @@ protocol CarViewDelegate: CommonPresenterDelegate{
     
     
 }
+
+protocol NewBrandViewDelegate: CommonPresenterDelegate{
+    func addBrandWithName(name: String, andYear year: Int)
+
+}
+

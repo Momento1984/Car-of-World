@@ -69,6 +69,7 @@ class CarRouter: RouterDelegate{
             case StoryBoardSeguesIdent.AddNewBrand:
                 let nbvc = segue.destination as! NewBrandViewController
                 nbvc.title = "Новая марка"
+                nbvc.presenter = NewBrandPresenter()
                 /*if let model = (currentPresenter as! ModelPresenter).selectedModel{
                     //nbvc.presenter = NewBrandPresenter()
                     
