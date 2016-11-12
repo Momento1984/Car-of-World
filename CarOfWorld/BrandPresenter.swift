@@ -8,28 +8,15 @@
 
 import Foundation
 import UIKit
-protocol CommonViewDelegate: class{
-    
-    func getView()->UIViewController?
-    func getImageForIndex(index: Int) -> UIImage?
-    func getNameForIndex(index: Int) -> String?
-    func getYearOfIssueForIndex(index: Int) -> Int?
-    func getCountList() -> Int
-    func nextViewDetailForIndex(index: Int)
-    func selectItemForIndex(index: Int)
 
-    
-}
 
-protocol BrandViewDelegate: CommonViewDelegate{
-   }
 class BrandPresenter:BrandViewDelegate{
     
     
     private let interactor: CarsInteractor
     private weak var router: RouterDelegate?
     public var selectedBrand: Brand?
-    public var view: UIViewController?
+    public weak var view: UIViewController?
     
     public init(){
         print("Brand presenter created")
@@ -86,5 +73,9 @@ class BrandPresenter:BrandViewDelegate{
         if index < self.interactor.brands.count{
             router?.openModelsModuleForBrand(brand: self.interactor.brands[index])
         }
+    }
+    
+    deinit{
+        print("Brand presenter good bay!")
     }
 }

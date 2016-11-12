@@ -9,21 +9,7 @@
 import Foundation
 import UIKit
 
-protocol CarViewDelegate: class{
-    func getView()->UIViewController?
-    func getImage() -> UIImage?
-    func getName() -> String?
-    func getBrandName() -> String?
-    func getYearOfIssue() -> Int?
-    func getEngineTyp() -> String?
-    func getEnginePower() -> Float?
-    func getColorForIndex(index: Int) -> UIColor?
-    func getTransmission() -> String?
-    func getDrive() -> String?
-    func getDescription() -> String?
-    
-    
-}
+
 class CarPresenter:CarViewDelegate{
     internal func getEnginePower() -> Float? {
         return model?.enginePower
@@ -74,7 +60,7 @@ class CarPresenter:CarViewDelegate{
     
     private let interactor: CarsInteractor
     private var model: Model?
-    public var view: UIViewController?
+    public weak var view: UIViewController?
     
     public init(model: Model){
         print("Car presenter created")
@@ -150,6 +136,8 @@ class CarPresenter:CarViewDelegate{
     }
 
 
-
+    deinit{
+        print("Car presenter good bay!")
+    }
 
 }

@@ -12,14 +12,15 @@ protocol RouterDelegate: class{
     func openModelsModuleForBrand(brand: Brand)
     func openCarModuleForModel(model: Model)
     func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    func viewDidAppearWithPresenter(presenter: CommonPresenterDelegate)
 }
 class CarRouter: RouterDelegate{
     
     
     static let shared = CarRouter()
     
-    public var currentPresenter: CommonViewDelegate?
-    private var nextPresenter: CommonViewDelegate?
+    public var currentPresenter: CommonPresenterDelegate?
+    
     
     private init(){
         print("Router created")
@@ -64,6 +65,10 @@ class CarRouter: RouterDelegate{
                 
             }
         }
+    }
+    
+    func viewDidAppearWithPresenter(presenter: CommonPresenterDelegate){
+        currentPresenter = presenter
     }
     
 }

@@ -55,6 +55,10 @@ class CarTableViewController: UITableViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        CarRouter.shared.viewDidAppearWithPresenter(presenter: presenter!)
+        
+    }
     
 
         // MARK: - Table view data source
@@ -125,5 +129,9 @@ class CarTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    deinit{
+        print("Car view good bay!")
+    }
 
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D80A38FB1DD6DE7900948D70 /* PresenterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80A38FA1DD6DE7900948D70 /* PresenterProtocols.swift */; };
 		D83A90A01DC79B9F00D5119A /* CarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83A909F1DC79B9F00D5119A /* CarRouter.swift */; };
 		D83A90A31DC7A06500D5119A /* ModelsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83A90A21DC7A06500D5119A /* ModelsTableViewController.swift */; };
 		D83A90A51DC7A27B00D5119A /* ModelPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83A90A41DC7A27B00D5119A /* ModelPresenter.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D80A38FA1DD6DE7900948D70 /* PresenterProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterProtocols.swift; sourceTree = "<group>"; };
 		D83A909F1DC79B9F00D5119A /* CarRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarRouter.swift; sourceTree = "<group>"; };
 		D83A90A21DC7A06500D5119A /* ModelsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelsTableViewController.swift; sourceTree = "<group>"; };
 		D83A90A41DC7A27B00D5119A /* ModelPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelPresenter.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				D8F99AB61DC64B8200C4F2E4 /* BrandPresenter.swift */,
 				D83A90A41DC7A27B00D5119A /* ModelPresenter.swift */,
 				D8AE2FEF1DCF1A7B0098C792 /* CarPresenter.swift */,
+				D80A38FA1DD6DE7900948D70 /* PresenterProtocols.swift */,
 			);
 			name = Presenters;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				D8AE2FEE1DCF19C80098C792 /* CarTableViewController.swift in Sources */,
 				D83A90A01DC79B9F00D5119A /* CarRouter.swift in Sources */,
 				D83A90A31DC7A06500D5119A /* ModelsTableViewController.swift in Sources */,
+				D80A38FB1DD6DE7900948D70 /* PresenterProtocols.swift in Sources */,
 				D8F99AB51DC6482000C4F2E4 /* BrandsTableViewController.swift in Sources */,
 				D8636AA61DC5C27E004D04BD /* Brand.swift in Sources */,
 				D8AE2FF01DCF1A7B0098C792 /* CarPresenter.swift in Sources */,

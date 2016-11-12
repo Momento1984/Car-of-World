@@ -19,8 +19,7 @@ class ModelsTableViewController: UITableViewController {
         title = presenter?.getName()
         
         (presenter as! ModelPresenter).view = self
-
-        //self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "modelCell")
+                //self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "modelCell")
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -34,6 +33,11 @@ class ModelsTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
        return 1
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        CarRouter.shared.viewDidAppearWithPresenter(presenter: presenter!)
+
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -111,5 +115,12 @@ class ModelsTableViewController: UITableViewController {
         CarRouter.shared.prepare(for: segue, sender: sender)
     }
     
+    override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+        
+    }
+    
+    deinit{
+        print("Model view good bay!")
+    }
 
 }

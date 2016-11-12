@@ -34,6 +34,11 @@ class BrandsTableViewController: UITableViewController {
 
         return 1
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        CarRouter.shared.viewDidAppearWithPresenter(presenter: presenter!)
+        
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter!.getCountList()
@@ -104,5 +109,7 @@ class BrandsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     
-
+    deinit{
+        print("Brand view good bay!")
+    }
 }

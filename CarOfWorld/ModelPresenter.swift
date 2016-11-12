@@ -9,10 +9,7 @@
 import Foundation
 import UIKit
 
-protocol ModelViewDelegate: CommonViewDelegate{
-    func getName()->String?
-    
-}
+
 class ModelPresenter:ModelViewDelegate{
     
 
@@ -21,7 +18,7 @@ class ModelPresenter:ModelViewDelegate{
     private var brand: Brand?
     public var selectedModel: Model?
 
-    public var view: UIViewController?
+    public weak var view: UIViewController?
     
     
     public init(brand: Brand){
@@ -113,6 +110,8 @@ class ModelPresenter:ModelViewDelegate{
     }
 
     
-    
+    deinit{
+        print("Model presenter good bay!")
+    }
 
 }
