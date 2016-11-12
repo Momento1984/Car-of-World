@@ -10,11 +10,19 @@ import UIKit
 
 
 
-class NewBrandViewController: UIViewController {
+class NewBrandViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!{
+        didSet{
+            nameTextField.delegate = self
+        }
+    }
     
-    @IBOutlet weak var yearOfIssueTextField: UITextField!
+    @IBOutlet weak var yearOfIssueTextField: UITextField!{
+        didSet{
+            yearOfIssueTextField.delegate = self
+        }
+    }
     
     @IBOutlet weak var logoImageView: UIImageView!
     
@@ -25,9 +33,32 @@ class NewBrandViewController: UIViewController {
     }
 
     
-    @IBAction func addButton(_ sender: Any) {
+    @IBAction private func addButton(_ sender: Any) {
         
     }
+    
+    // MARK: UITextFieldDelegate
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        
+        if textField == yearOfIssueTextField {
+            if let year = Int(textField.text!){
+                textField.resignFirstResponder()
+                return true
+            } else{
+                return false
+            }
+
+        }
+        //searchText = textField.text
+        textField.resignFirstResponder()
+        return true
+    }
+
+    
+    
+    
     /*
     // MARK: - Navigation
 
