@@ -115,9 +115,6 @@ class ModelsTableViewController: UITableViewController {
         CarRouter.shared.prepare(for: segue, sender: sender)
     }
     
-    override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
-        
-    }
     
     deinit{
         print("Model view good bay!")

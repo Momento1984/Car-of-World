@@ -20,11 +20,6 @@ class BrandsTableViewController: UITableViewController {
         presenter = CarRouter.shared.currentPresenter as? BrandViewDelegate
         (presenter as! BrandPresenter).view = self
         
-                // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
    
@@ -39,7 +34,7 @@ class BrandsTableViewController: UITableViewController {
         CarRouter.shared.viewDidAppearWithPresenter(presenter: presenter!)
         
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter!.getCountList()
     }

@@ -16,7 +16,12 @@ protocol RouterDelegate: class{
 }
 class CarRouter: RouterDelegate{
     
-    
+    private struct StoryBoardSeguesIdent{
+        static let OpenModels = "Open models"
+        static let OpenCars = "Open car"
+        static let AddNewBrand = "Add new brand"
+        static let AddNewModel = "Add new model"
+    }
     static let shared = CarRouter()
     
     public var currentPresenter: CommonPresenterDelegate?
@@ -46,14 +51,14 @@ class CarRouter: RouterDelegate{
     public func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if let ident = segue.identifier{
             switch ident {
-            case "Open models":
+            case StoryBoardSeguesIdent.OpenModels:
                 let mtvc = segue.destination as! ModelsTableViewController
                 if let brand = (currentPresenter as! BrandPresenter).selectedBrand{
                     mtvc.presenter = ModelPresenter(brand:brand)
                     currentPresenter = mtvc.presenter
             
                 }
-            case "Open car":
+            case StoryBoardSeguesIdent.OpenCars:
                 let ctvc = segue.destination as! CarTableViewController
                 if let model = (currentPresenter as! ModelPresenter).selectedModel{
                     ctvc.presenter = CarPresenter(model:model)
@@ -61,6 +66,14 @@ class CarRouter: RouterDelegate{
 
                 }
                 
+            case StoryBoardSeguesIdent.AddNewBrand:
+                let nbvc = segue.destination as! NewBrandViewController
+                nbvc.title = "Новая марка"
+                /*if let model = (currentPresenter as! ModelPresenter).selectedModel{
+                    //nbvc.presenter = NewBrandPresenter()
+                    
+ 
+                }*/
             default: print("Error segue ident name = \(ident)")
                 
             }

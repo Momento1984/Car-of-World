@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D80A38FB1DD6DE7900948D70 /* PresenterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80A38FA1DD6DE7900948D70 /* PresenterProtocols.swift */; };
+		D82FB6CD1DD706AA00A00319 /* NewBrandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82FB6CC1DD706AA00A00319 /* NewBrandViewController.swift */; };
 		D83A90A01DC79B9F00D5119A /* CarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83A909F1DC79B9F00D5119A /* CarRouter.swift */; };
 		D83A90A31DC7A06500D5119A /* ModelsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83A90A21DC7A06500D5119A /* ModelsTableViewController.swift */; };
 		D83A90A51DC7A27B00D5119A /* ModelPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83A90A41DC7A27B00D5119A /* ModelPresenter.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		D80A38FA1DD6DE7900948D70 /* PresenterProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterProtocols.swift; sourceTree = "<group>"; };
+		D82FB6CC1DD706AA00A00319 /* NewBrandViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBrandViewController.swift; sourceTree = "<group>"; };
 		D83A909F1DC79B9F00D5119A /* CarRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarRouter.swift; sourceTree = "<group>"; };
 		D83A90A21DC7A06500D5119A /* ModelsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelsTableViewController.swift; sourceTree = "<group>"; };
 		D83A90A41DC7A27B00D5119A /* ModelPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelPresenter.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				D8AE2FED1DCF19C80098C792 /* CarTableViewController.swift */,
 				D8F99AB41DC6482000C4F2E4 /* BrandsTableViewController.swift */,
 				D83A90A21DC7A06500D5119A /* ModelsTableViewController.swift */,
+				D82FB6CC1DD706AA00A00319 /* NewBrandViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				D8636AA61DC5C27E004D04BD /* Brand.swift in Sources */,
 				D8AE2FF01DCF1A7B0098C792 /* CarPresenter.swift in Sources */,
 				D83A90A51DC7A27B00D5119A /* ModelPresenter.swift in Sources */,
+				D82FB6CD1DD706AA00A00319 /* NewBrandViewController.swift in Sources */,
 				D8636A8D1DC5BD9B004D04BD /* AppDelegate.swift in Sources */,
 				D8636AAA1DC5D163004D04BD /* CarsInteractor.swift in Sources */,
 				D8636AA81DC5CB1F004D04BD /* Model.swift in Sources */,

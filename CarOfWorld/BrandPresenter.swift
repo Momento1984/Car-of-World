@@ -75,6 +75,11 @@ class BrandPresenter:BrandViewDelegate{
         }
     }
     
+    func addNewItem(){
+        self.interactor.brands.append(Brand(name: "Новый", year: 1900 ))
+    }
+
+    
     deinit{
         print("Brand presenter good bay!")
     }

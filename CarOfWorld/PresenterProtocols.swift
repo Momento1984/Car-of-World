@@ -18,6 +18,7 @@ protocol TablePresenterDelegate: CommonPresenterDelegate{
     func getCountList() -> Int
     func nextViewDetailForIndex(index: Int)
     func selectItemForIndex(index: Int)
+    func addNewItem()
     
 }
 

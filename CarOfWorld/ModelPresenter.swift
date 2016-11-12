@@ -108,6 +108,10 @@ class ModelPresenter:ModelViewDelegate{
             }
         }
     }
+    
+    func addNewItem(){
+        
+    }
 
     
     deinit{
