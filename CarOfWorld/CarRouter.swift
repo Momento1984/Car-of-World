@@ -13,6 +13,7 @@ protocol RouterDelegate: class{
     func openCarModuleForModel(model: Model)
     func prepare(for segue: UIStoryboardSegue, sender: Any?)
     func viewDidAppearWithPresenter(presenter: CommonPresenterDelegate)
+    func closeView(view: UIViewController)
 }
 class CarRouter: RouterDelegate{
     
@@ -84,5 +85,10 @@ class CarRouter: RouterDelegate{
     func viewDidAppearWithPresenter(presenter: CommonPresenterDelegate){
         currentPresenter = presenter
     }
+    
+    func closeView(view: UIViewController){
+        view.navigationController?.popViewController(animated: true)
+    }
+
     
 }

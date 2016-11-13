@@ -11,12 +11,13 @@ import UIKit
 
 class NewBrandPresenter: NewBrandViewDelegate{
     private let interactor: CarsInteractor
-    
+    private let router: CarRouter
     
     public init(){
         print("NewBrand presenter created")
         
         self.interactor = CarsInteractor.shared
+        self.router = CarRouter.shared
     }
     
     public weak var view: UIViewController?
@@ -27,7 +28,13 @@ class NewBrandPresenter: NewBrandViewDelegate{
 
     
     func addBrandWithName(name: String, andYear year: Int){
-        interactor.brands.append(Brand(name: name, year: year))
+        if (year >= 1900) && (year <= 2030){
+            if !name.isEmpty{
+                interactor.brands.append(Brand(name: name, year: year))
+                router.closeView(view: view!)
+            }
+        }
+        
     }
     
     deinit{
